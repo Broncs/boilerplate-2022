@@ -1,62 +1,521 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <!-- style -->
-    <link rel="stylesheet" href="assets/css/style.compilado.css">
+    <link rel="stylesheet" href="assets/css/style.compilado.css" />
 
- 
+    <title>home</title>
+  </head>
 
-    <title>Modelo</title>
-
-</head>
-
-<body  style="background-color: blanchedalmond; height: 200vh;">
-
+  <body>
     <main id="page__home">
+      <!-- ☰ MENUS -->
+      <nav id="header">
+        <div class="container">
+          <div class="header-container">
+            <a href="#" id="logo">
+              <img src="assets/imagens/menu-logo.png" alt="logo" />
+            </a>
 
-        <!-- ☰ MENUS -->
-        <nav id="header">
-            <div class="container--personalizado">
-              <div class="header-container">
+            <div id="nav">
+              <button
+                id="btn-mobile"
+                aria-label="Abrir menu"
+                aria-haspopup="true"
+                aria-controls="menu"
+                aria-expanded="false"
+              >
+                <span id="hamburger"></span>
+              </button>
+              <ul id="menu" role="menu">
+                <li class="link"><a  href="/">FAQ</a></li>
+                <li class="link"><a  href="/">Telefones</a></li>
+                <button class="btn-primary cta-menu" type="button">
+                  Fazer sua cotação agora
 
-                <a href="#" id="logo">
-                    <img src="https://via.placeholder.com/200x50" alt="LMI">
-                </a>
-
-                <div id="nav">
-                    <button id="btn-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-                    <span id="hamburger"></span>
-                    </button>
-                    <ul id="menu" role="menu">
-                        <li><a class="link" href="/sobre.html">Quem somos</a> </li>
-                        <li><a class="link" href="/professores.html">Produto</a></li>
-                        <li><a class="link" href="/cursos.html">Processo</a></li>
-                        <li><a class="link" href="/certificados.html">Trabalhe conosco</a></li>
-                        <li><a class="link" href="/contato.html">contato</a></li>
-                    </ul>             
-                </div>
-              </div>
+                  <img
+                    src="/assets/imagens/icons/arrow-right.svg"
+                    alt="arrow-right"
+                  />
+                </button>
+              </ul>
+            </div>
+          </div>
         </div>
-           
-    </nav>
-        <!-- fim menus -->
+      </nav>
+      <!-- fim menus -->
 
+      <header id="banner">
+        <div class="container">
+          <div class="hero-content">
+            <h1 data-aos="fade-up">Egestas egestas sodales curabitur elementum eu.</h1>
+            <p data-aos="fade-up" data-aos-delay="300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan
+              arcu, condimentum vel gravida turpis sed orci. Sit.
+            </p>
+
+            <div data-aos="fade-up" data-aos-delay="400">
+              <a  href="#" class="btn-primary"  data-id="1" data-xopen="modal">
+                Fazer sua cotação agora
+                <img src="assets/imagens/icons/arrow-right.svg" alt="#" />
+              </a>
+            </div>
+          
+          </div>
+        </div>
+      </header>
+
+      <section id="vantagens">
+        <div class="container">
+          <div class="vantagens-wrapper">
+            <div class="homem-wrapper" data-aos="fade-right" >
+              <img
+                src="/assets/imagens/ilustracao-em-pe.svg"
+                alt="homem em pe"
+              />
+            </div>
+            <div class="vantagens-content">
+              <div class="vantagens-title-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <h2>
+                  Vantagens de ter um <br />
+                  seguro para terceiros
+                </h2>
+                <img src="/assets/imagens/icons/multi-arrow-down.svg" alt="#" />
+              </div>
+
+              <div class="swiper swiper-vantagens" data-aos="fade-up" data-aos-delay="500">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="vantagens-card">
+                      <img
+                        src="/assets/imagens/icons/protecao.svg"
+                        alt="protecao"
+                      />
+                      <p class="card-title">
+                        Proteção legal e Assistência Financeira
+                      </p>
+                      <p class="card-description">
+                        A cobertura de seguro de terceiros irá protegê-lo
+                        financeiramente em caso de morte ou invalidez do
+                        terceiro e em caso de danos à propriedade ou veículo do
+                        terceiro.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="vantagens-card">
+                      <img
+                        src="/assets/imagens/icons/tranquilidade.svg"
+                        alt="protecao"
+                      />
+                      <p class="card-title">Tranquilidade</p>
+                      <p class="card-description">
+                        Em vez de se preocupar com as despesas dos danos
+                        causados, você terá o alívio imediato do estresse e
+                        assistência de lidar com o incidente.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="vantagens-card">
+                      <img
+                        src="/assets/imagens/icons/protecao.svg"
+                        alt="protecao"
+                      />
+                      <p class="card-title">Custo benefícios</p>
+                      <p class="card-description">
+                        Um plano de seguro de terceiros tem prêmios acessíveis
+                        que cabem no seu bolso. Ao comparar com outras
+                        modalidades de proteção, vai notar que ele tem um ótimo
+                        custo benefício.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+
+              <div class="btn-center"  data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="btn-primary"
+                  >Quero cotar meu seguro
+                  <img
+                    src="/assets/imagens/icons/arrow-right.svg"
+                    alt="arrow-right"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="passos">
+        <div class="container">
+          <div class="passos-grid">
+            <div class="passos-title-wrapper" data-aos="fade-right" >
+              <div class="loading-animation-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+              <h2>
+                Se proteja em <br />
+                apenas <span>3 passos</span>
+              </h2>
+            </div>
+            <div class="passos-wrapper">
+              <div class="passo" data-aos="fade-up" data-aos-delay="300">
+                <div class="dashed-icon">
+                  <img
+                    src="/assets/imagens/icons/circulo-dashed.svg"
+                    alt="passo-1"
+                  />
+                  <span>1</span>
+                </div>
+                <p class="passo-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est
+                  diam vitae blandit sed at. Phasellus diam donec eget viverra
+                  in ut.
+                </p>
+              </div>
+              <div class="passo" data-aos="fade-up" data-aos-delay="400">
+                <div class="dashed-icon">
+                  <img
+                    src="/assets/imagens/icons/circulo-dashed.svg"
+                    alt="passo-1"
+                  />
+                  <span>2</span>
+                </div>
+                <p class="passo-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est
+                  diam vitae blandit sed at. Phasellus diam donec eget viverra
+                  in ut.
+                </p>
+              </div>
+              <div class="passo ultimo-passo" data-aos="fade-up" data-aos-delay="500" >
+                <div class="dashed-icon">
+                  <img
+                    src="/assets/imagens/icons/circulo-dashed.svg"
+                    alt="passo-1"
+                  />
+                  <span>3</span>
+                </div>
+                <p class="passo-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est
+                  diam vitae blandit sed at. Phasellus diam donec eget viverra
+                  in ut.
+                </p>
+              </div>
+            </div>
+
+            <div class="homem-pulando" data-aos="fade-left" data-aos-delay="500" data-aos-anchor=".ultimo-passo">
+              <img
+                src="/assets/imagens/homem-pulando.svg"
+                alt="homem-pulando"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODALZAO  -->
+      <div class="modal" data-position="full">
+        <form >
+        <section class="modal--content  step-1" data-id="1">
+          <div class="modal-container">
+            <div class="header-modal">
+              <div data-id="1" data-xclose="modal">
+                  <img src="/assets/imagens/icons/arrow-back.svg" alt="voltar" " >
+                  <p>Voltar para home</p>
+              </div> 
+            </div>
+           <!-- progressbar -->
+              <ul id="progressbar">
+                  <li class="active"></li>
+                  <li ></li>                
+              </ul>
+              <div class="form-fields">
+                  <h2>Para saber o preço do seu seguro preencha os campos abaixo</h2>
+
+                  <div class="grupo-form">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome">
+                  </div>
+
+                  <div class="grupo-form">
+                    <label for="tel">Whatsapp</label>
+                    <input type="tel" id="tel">
+                  </div>
+                  
+                  <div class="grupo-form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                  </div>
+
+                  <button class="btn-primary " type="button" data-id="2" data-xopen="modal">
+                    Prosseguir
+                    <img
+                      src="/assets/imagens/icons/arrow-right.svg"
+                      alt="arrow-right"
+                    />
+                  </button>
+                  
+              </div>
+          </div>
+          
+        </section>
+        <section class="modal--content step-2" data-id="2">
+
+          <div class="modal-container">
+            <div class="header-modal">
+              <div data-id="1" data-xclose="modal">
+                  <img src="/assets/imagens/icons/arrow-back.svg" alt="voltar" " >
+                  <p>Voltar para home</p>
+              </div> 
+            </div>
+           <!-- progressbar -->
+              <ul id="progressbar">
+                  <li class="active"></li>
+                  <li></li>
+                 
+              </ul>
+              <div class="form-fields">
+                  <h2>Para saber o preço do seu seguro preencha os campos abaixo</h2>
+
+                  <div class="grupo-form">
+                    <label for="tipo">Qual é o tipo do veículo?</label>
+                    <select name="tipo" id="tipo">
+                      <option value="" selected >Selecione</option>
+                      <option value="carro">carro</option>
+                      <option value="moto">moto</option>
+                      <option value="caminhao">caminhão</option>
+         
+                    </select>
+                  </div>
+
+                  <div class="grupo-form">
+                    <label for="apolice">Terá bônus na apólice a ser contrada?</label>
+                    <input type="tel" id="apolice" placeholder="Informe o valor">
+                  </div>
+                  
+                  <div class="grupo-form">
+                    <label for="text">Qual a lotação do veículo?</label>
+                    <input type="text" id="text">
+                  </div>
+                   
+                  <div class="grupo-form">
+                    <p  class="label-p">Qual o valor de cobertura para Danos Materiais e Corporais ?</p>
+                    <div class="radio-options">
+                      <div>
+                        <input checked type="radio" id="50000" value="50000" name="valor-danos">
+                        <label for="50000"  >50.000</label>
+                      </div>
+                      
+                      <div>
+                        <input type="radio" id="100000" value="100000" name="valor-danos">
+                        <label for="100000">100.000</label>
+                      </div>                     
+                    </div>                 
+                  </div>
+
+                  <div class="grupo-form">
+                    <p  class="label-p">Qual o valor de cobertura para Aplicativo ?</p>
+                    <div class="radio-options">
+                      <div>
+                        <input checked type="radio" id="5000" value="5000" name="valor-aplicativo">
+                        <label for="5000">5.000</label>
+                      </div>
+                      
+                      <div>
+                        <input type="radio" id="10000" value="10000" name="valor-aplicativo">
+                        <label for="10000">10.000</label>
+                      </div>                     
+                    </div>                 
+                  </div>
+
+               
+
+                  <button class="btn-primary cta-menu" type="button" data-id="3" data-xopen="modal">
+                    Prosseguir
+                    <img
+                      src="/assets/imagens/icons/arrow-right.svg"
+                      alt="arrow-right"
+                    />
+                  </button>
+                  
+              </div>
+          </div>
+        </section>
+        <section class="modal--content step-3" data-id="3">
+
+          <div class="modal-container">
+            <div class="header-modal">
+              <div data-id="1" data-xclose="modal">
+                  <img src="/assets/imagens/icons/arrow-back.svg" alt="voltar" " >
+                  <p>Voltar para home</p>
+              </div> 
+            </div>
+           <!-- progressbar -->
+            
+           <div class="resultado-wrapper">
+             <div class="homem-pulando-resultado">
+               <img src="/assets/imagens/homem-pulando.svg" alt="#">
+             </div>
+             <div>
+                <p class="p-result">Seu seguro custará</p>
+                <span class="span-result">R$ 200.000,00</span>
+             </div>
+             <a class="btn-primary" href="#" >
+              Contrate agora
+                <img
+                  src="/assets/imagens/icons/arrow-right.svg"
+                  alt="arrow-right"
+                />
+             </a>
+           </div>
+             
+          </div>
+        </section>
+      
+       </form>
+      </div>
+
+      <footer id="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <img
+              class="footer-logo"
+              src="/assets/imagens/logo-footer.png"
+              alt=""
+            />
+
+            <div class="footer-col">
+              <ul>
+                <li>Contato</li>
+                <li>
+                  <img src="/assets/imagens/icons/location-icon.svg" alt="" />
+                  <a href="#"
+                    >Estrada do Guerenguê, 1247 Loja F, Rio de Janeiro - RJ -
+                    CEP: 20230-260</a
+                  >
+                </li>
+                <li>
+                  <img src="/assets/imagens/icons/phone-icon.svg" alt="" />
+                  <a href="#">21 3852.1024</a>
+                </li>
+                <li>
+                  <img src="/assets/imagens/icons/phone-icon.svg" alt="" />
+                  <a href="#">21 3344.9303</a>
+                </li>
+                <li>
+                  <img src="/assets/imagens/icons/whatsup.svg" alt="" />
+                  <a href="#">21 98463-5168</a>
+                </li>
+                <li>
+                  <img src="/assets/imagens/icons/email-icon.svg" alt="" />
+                  <a href="#">atendimento@hunikaseguros.com.br</a>
+                </li>
+                <li>
+                  <img src="/assets/imagens/icons/email-icon.svg" alt="" />
+                  <a href="#">comercial@hunikaseguros.com.br</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <ul>
+                <li>Horários</li>
+                <li><p>Segunda a Sexta, das 9h às 18h</p></li>
+                <li><p>Somente em feriados nacionais não atendemos.</p></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sub-footer">
+          <div class="container">
+            <p>
+              &copy; Amigo do motorista 2022 - Todos os direitos reservados.
+            </p>
+            <a target="_blank" href="https://novadata.com.br/">
+              <img
+                class="logo-data"
+                src="/assets/imagens/logo-data.png"
+                alt="#"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
 
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+ 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- script main -->
+    <script  src="/assets/js/modalX.js"></script>
     <script type="module" src="assets/js/main.js"></script>
 
- 
+    <script>
+      var swiper = new Swiper(".swiper-vantagens", {
+        slidesPerView: "auto",
+        spaceBetween: 32,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+          1200: {
+            slidesPerView: 3,
+          },
+        },
+      });
+    </script>
 
+    <script>
+      ModalX(".modal", {
+      //   deep: true,
+        zIndex: 99999999,
+        zIndexDeep: 900,
+        closeOnSwipe: false, //Hammer.js for enable gestures
+        observer: false, //create oberver in modal element
+        bgModal: "white",
+      }).init();
+    </script>
 
-</body>
-
+<script>
+  AOS.init({
+      disable: function () {
+          var maxWidth =  768;
+          return window.innerWidth < maxWidth;
+      },
+      startEvent: 'DOMContentLoaded',
+      offset: 30, // offset (in px) from the original trigger point
+      delay: 100, // values from 0 to 3000, with step 50ms
+      duration: 1000, // values from 0 to 3000, with step 50ms
+      easing: 'ease', // default easing for AOS animations
+      once: true, // whether animation should happen only once - while scrolling down
+  });
+</script>
+  </body>
 </html>

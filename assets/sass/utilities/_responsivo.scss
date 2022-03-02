@@ -4,6 +4,7 @@ $ll-device: 1440px; //large
 $l-device: 1366px; //large
 $mm-device: 992px; //mediums
 $m-device: 1024px; //mediums
+$t-device: 768px; //mediums
 $s-device: 540px; //small
 $ss-device: 330px; //small small
 
@@ -34,6 +35,11 @@ $ss-device: 330px; //small small
   }
   @else if $size==mm {
     @media screen and (max-width: $mm-device ) {
+      //abaixo do medio
+      @content;
+    }
+  } @else if $size==t {
+    @media screen and (max-width: $t-device ) {
       //abaixo do medio
       @content;
     }

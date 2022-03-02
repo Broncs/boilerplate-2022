@@ -1,1 +1,585 @@
 // @import "../components/secao-contato.scss";
+#banner {
+  margin-bottom: 8rem;
+  @include d(t) {
+    margin-bottom: 5rem;
+  }
+
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+
+  width: 100%;
+  background-image: url("../imagens/banner-home.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @include d(t) {
+    background-position: 37% 50%;
+  }
+
+  .container {
+    height: 100%;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 384px;
+
+    h1 {
+      font-family: $font-2;
+      color: $cor-primary-blue;
+      @include clamp(font-size, 2.3rem, 4vw, 3rem);
+      letter-spacing: -2px;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      color: #313943;
+
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 4rem;
+    }
+
+    .btn-primary {
+      @include Botao(#fff, $cor-primary-orange);
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: 0.3s ease;
+      &:hover{
+        transform: scale(1.07);
+      }
+    }
+  }
+}
+
+#vantagens {
+  margin-bottom: 6.5rem;
+
+  .swiper-vantagens {
+    overflow: visible;
+    padding-bottom: 2rem;
+    .swiper-slide {
+      max-width: 280px;
+      height: auto;
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom {
+      bottom: 0;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: $cor-primary-orange;
+    }
+  }
+
+  .vantagens-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, auto) minmax(0, auto);
+
+    @media (max-width: 1200px) {
+      margin-left: -100px;
+      @include d(t) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .homem-wrapper {
+    position: relative;
+    z-index: 3;
+    margin-right: 4rem;
+
+    @media screen and (max-width: 1440px) {
+      img{
+        max-height: 400px;
+      }
+    }
+  
+    @include d(t) {
+      display: none;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100vw;
+      background: #fff;
+      z-index: -1;
+    }
+  }
+
+  .vantagens-content {
+    .vantagens-title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+      @media screen and (max-width: 1440px) {
+        margin-bottom: 3rem;
+      }
+      @include d(t) {
+        margin-bottom: 2rem;
+      }
+    }
+    h2 {
+      color: #474e57;
+      @include clamp(font-size, 2rem, 3vw, 2.5rem);
+      line-height: 1.3;
+      font-family: $font-2;
+      letter-spacing: -2px;
+      font-weight: 400;
+    }
+
+    .vantagens-card {
+      padding: 2rem 1rem;
+      height: 100%;
+
+      background-color: #fff;
+      border: 1px solid #e8e9ea;
+
+      box-shadow: 0px 8px 24px rgba(94, 94, 94, 0.08);
+      border-radius: 16px;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+
+      text-align: center;
+      img {
+        margin-bottom: 2rem;
+        @media screen and (max-width: 1440px) {
+          margin-bottom: 1rem;
+        }
+      }
+      .card-title {
+        color: #191a6c;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+        min-height: 67px;
+        @media screen and (max-width: 1440px) {
+          font-size: 1.2rem;
+          min-height: 47px;
+        }
+      }
+      .card-description {
+        font-size: 1.125rem;
+     
+        color: #474e57;
+        line-height: 1.5;
+        letter-spacing: -0.3px;
+        @media screen and (max-width: 1440px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .btn-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    @media screen and (max-width: 1440px) {
+      margin-top: 1rem;
+    }
+    .btn-primary {
+      @include Botao(#fff, $cor-primary-orange);
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+  }
+}
+
+#passos {
+  margin-bottom: 8rem;
+
+  background-color: #0074d9;
+  color: white;
+  padding: 6rem 0;
+  @include d(t) {
+    padding-bottom: 4rem;
+  }
+  @include d(s) {
+    margin-bottom: 4rem;
+  }
+  .passos-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr 263px;
+    align-items: flex-start;
+    gap: 2rem;
+    @include d(t) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .passos-title-wrapper {
+    align-self: center;
+    margin-top: -2rem;
+    @media screen and (max-width: 1200px) {
+      grid-column: 1 / 3;
+    }
+    .loading-animation-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 8px;
+      margin-bottom: 2rem;
+    }
+
+    body {
+      margin: 0;
+      background: #e0e0e0;
+    }
+
+    @keyframes bounce {
+      25% {
+        transform: translateY(-25px);
+      }
+      75% {
+        transform: translateY(5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .loading-animation-container > .dot {
+      width: 10px;
+      height: 6px; /*
+            background-color: rgba(251, 140, 0, 1); */
+      background-color: rgba(255, 255, 255, 0.3);
+      margin: 0 5px 0 0;
+      border-radius: 4px;
+      animation-name: bounce;
+      animation-duration: 1.5s;
+      // animation-iteration-count: infinite;
+      // animation-timing-function: linear;
+    }
+
+    .loading-animation-container > .dot:nth-child(2) {
+      animation-delay: 0.25s;
+    }
+
+    .loading-animation-container > .dot:nth-child(3) {
+      animation-delay: 0.51s;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .loading-animation-container > .dot:nth-of-type(2n) {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+    h2 {
+      color: rgba(255, 255, 255, 0.7);
+      @include clamp(font-size, 2rem, 4vw, 2.5rem);
+      font-family: $font-2;
+      font-weight: 400;
+    }
+
+    span {
+      color: #fff;
+    }
+  }
+
+  .passos-wrapper {
+    @media screen and (max-width: 1200px) {
+      grid-column: 1 / 3;
+    }
+    .passo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .dashed-icon {
+        position: relative;
+        min-width: 64px;
+        height: 54px;
+        margin-right: 1rem;
+        span {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: 700;
+          color: #ffb479;
+          font-size: 24px;
+        }
+      }
+      .passo-description {
+        font-weight: 500;
+        line-height: 1.5;
+      }
+    }
+  }
+  .homem-pulando {
+    position: relative;
+
+    @media screen and (max-width: 1200px) {
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    img {
+      margin-bottom: -238px;
+      position: absolute;
+      top: -13px;
+      @media screen and (max-width: 1200px) {
+        top: 20px;
+      }
+    }
+  }
+}
+
+// STEPS MODAL
+/*progressbar*/
+#progressbar {
+  margin-bottom: 2rem;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 50%;
+  float: left;
+  position: relative;
+}
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 24px;
+  height: 24px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #191a6c;
+  background: #f2f3f9;
+  border-radius: 50%;
+  margin: 0 auto 5px auto;
+  font-weight: 600;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #f2f3f9;
+  position: absolute;
+  left: 0;
+  top: 9px;
+
+  z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  // content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #191a6c;
+  color: white;
+}
+
+.modal {
+  form {
+    padding: 0 2rem;
+  }
+}
+
+.modal-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.modal--content {
+  height: 100vh;
+
+  .modal-container {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    height: 100%;
+    overflow-y: auto;
+  }
+  .header-modal {
+    margin-bottom: 2rem;
+    cursor: pointer;
+    div {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .form-fields {
+    h2 {
+      color: #474e57;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+
+      line-height: 1.4;
+      @media screen  and (max-width: 1440px) {
+        font-size: 1.2rem;
+      }
+    }
+    .grupo-form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+
+      .label-p{
+        color: #474e57;
+        line-height: 140%;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      label {
+        color: #474e57;
+        line-height: 140%;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      input:not([type="checkbox"]):not([type="radio"]),
+      select {
+        background-color: #f3f4f4;
+
+        border: 1px solid #e8e9ea;
+        height: 3rem;
+        padding: 0 1rem;
+        border-radius: 28px;
+        transition: 0.2s ease;
+        font-family: $font-1;
+        &:focus {
+          border-color: $cor-primary-orange;
+        }
+      }
+      input[type="radio"] {
+        // -webkit-appearance:radio;
+      }
+      select {
+        background-image: url(/assets/imagens/icons/arrow-down-select.svg);
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2rem;
+      }
+
+      input[type="radio"] + label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+        line-height: 20px;
+      }
+
+      input[type="radio"] + label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        aspect-ratio: 1;
+        border: 1px solid $cor-primary-orange;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        opacity: 1;
+        transition: all 0.3s;
+      }
+
+      input[type="radio"] + label::after {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        aspect-ratio: 1;
+        border: 1px solid $cor-primary-orange;
+        background: $cor-primary-orange;;
+        border-radius: 50%;
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.3s;
+      }
+
+      input[type="radio"]:checked + label::after {
+        opacity: 1;
+      }
+
+      .radio-options{
+          display: flex;
+          align-items: center;
+
+          div + div{
+              margin-left: 10px
+          }
+      }
+    }
+
+    .btn-primary {
+      @include Botao(#fff, $cor-primary-orange);
+      font-weight: 700;
+      font-size: 1.125rem;
+      max-width: unset;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+ }
+
+ .resultado-wrapper{
+     text-align: center;
+
+     .homem-pulando-resultado{
+         img{
+             margin: 0 auto;
+             max-height: 300px;
+             height: 50vh;
+             min-height: 300px;
+             margin-bottom: 2rem;
+         }
+     }
+    .p-result{
+        color: #474e57;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+     }
+     .span-result{
+            color: #191A6C;
+            font-weight: 600;
+            font-size: 3rem;
+            line-height: 1.4;
+     }
+
+    .btn-primary {
+        @include Botao(#fff, $cor-primary-orange);
+        font-weight: 700;
+        font-size: 1.125rem;
+        max-width: unset;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 4rem;
+      }
+ }
+}

@@ -14,10 +14,16 @@ body {
     &.dcl {
         opacity: 1;
     }
+    // prevent scroll when modal is open 
+    &.modal--open-modal {
+        height: 100vh;
+        overflow-y: hidden;
+        padding-right: 15px;
+    } 
 
 }
 
-.container--personalizado {
+.container{
     margin: 0 auto;
     padding: 0 1.5rem;
     width: 100%;
@@ -40,10 +46,11 @@ body {
     }
 
     @media (min-width: 1400px) {
-        max-width: 1400px
+        max-width: 1260px
     }
 
 }
+
 
 
 //rem responsivo
@@ -56,13 +63,13 @@ html {
 
 @media (max-width: 1440px) {
     html {
-        font-size: calc(var(--font-base) - 9.25%);
+        font-size: calc(var(--font-base) - 12.25%);
     }
 }
 
 @media (max-width: 980px) {
     html {
-        font-size: calc(var(--font-base) - 12.5%);
+        font-size: calc(var(--font-base) - 13.5%);
     }
 }
 

@@ -1,6 +1,8 @@
 //colocar  as variaveis de cor  do projeto no body como variaveis css
 body {
     --cor-preto-1: #000;
+    --cor-primary-blue: #191A6C;
+    --cor-primary-orange: #FE7E01
 
 }
 
@@ -17,3 +19,5 @@ body.dark__mode {
 
 // preto
 $cor-preto-1:#{var(--cor-preto-1)};
+$cor-primary-blue:#{var(--cor-primary-blue)};
+$cor-primary-orange:#{var(--cor-primary-orange)};

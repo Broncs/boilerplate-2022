@@ -1,12 +1,15 @@
-$logo-height: 50px;
-$bg-color-on-scroll: #fff;
-$bg-color-menu-open-mobile: #fff;
+//  mudar as valores da variaveis de acordo com o seu tema/layout  . 
+$logo-height: 80px;
+$bg-on-top-color: transparent;
+$bg-color-on-scroll: $cor-primary-orange;
+$bg-color-menu-open-mobile: $cor-primary-orange;
+$bg-color-header-menu-open-mobile:  $cor-primary-orange;;
+$border-bottom-color:  rgba(0, 0, 0, .05);
+$color-links: #fff;
+$color-hamburguer: #fff;
+// background: linear-gradient(180deg, #19222E 0%, rgba(25, 34, 46, 0) 145%);
 
-
-$color-links: #000;
-$color-hamburguer: #000;
 #logo {
-
 	height: $logo-height;
     transition: 0.3s ease-in-out;
 
@@ -18,7 +21,7 @@ $color-hamburguer: #000;
 }
 #header {
 
-	background: transparent;
+	background: $bg-on-top-color;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -33,7 +36,9 @@ $color-hamburguer: #000;
 
         
 	}
-
+	&.bg-on-menu-open{
+		background-color: $bg-color-header-menu-open-mobile;
+	}
     @media (min-width: 1024px){
         &.sticky #logo {
             height: calc(#{$logo-height} - 10px);
@@ -41,9 +46,11 @@ $color-hamburguer: #000;
         
         }
     }
- 
-
-
+	@include d(m){
+		&.sticky #logo{
+			height: calc(#{$logo-height} - 10px);
+		}
+	}
 }
 
 .header-container{
@@ -58,18 +65,49 @@ $color-hamburguer: #000;
     align-items: center;
 
     li+li{
-        margin-left: 1rem;
+        margin-left: 2rem;
     }
 	
+	.btn-primary{
+		@include Botao-outline(#fff, #fff);
+		margin-left: 2rem;
+		font-size: 1.125rem;
+		font-weight: 600;
+		transition: transform 0.2s ease;
+	
+		img{
+			filter: brightness(0) invert(1);
+		}
+		@media screen and (min-width: 1024px) {
+			&:hover{
+				transform: scale(1.07);
+			}
+		}
+		// &:hover{
+		// 	background-color: $cor-primary-orange;
+		// }
+	}
 
 }
 
-#menu a.link {
+#menu .link {
 	display: block;
 	padding: .5rem;
-    color: $color-links;
+   
     line-height: 120%;
-    font-size: 1rem;
+    font-size: 1.125rem;
+	font-family: $font-1;
+	font-weight: 600;
+	transform: transform 10s ease;
+
+	a{
+		color: $color-links;
+	}
+	@media screen and (min-width: 1024px) {
+		&:hover{
+			transform: scale(1.07);
+		}
+	}
 
 	
 }
@@ -82,15 +120,14 @@ $color-hamburguer: #000;
     .buttons{
         display: none;
     }
+	
     #nav.active #menu .buttons{
         display: flex;
 		margin-top: 1rem;
 		align-items: center;
         // flex-direction: column;
 
-		.btn-primary{
-			margin: 1rem;
-		}
+		
 
 		
     }
@@ -99,6 +136,11 @@ $color-hamburguer: #000;
         
 	}
 	
+	#header{
+		&.sticky #menu{
+			top: calc(#{$logo-height - 10px} + 2rem);
+		}
+	}
 	#menu {
 		display: block;
 		position: fixed;
@@ -114,6 +156,10 @@ $color-hamburguer: #000;
 		z-index: 1000;
 		
 		overflow-y: hidden;
+
+		.btn-primary{
+			margin: 1rem;
+		}
 	}
 	#nav.active #menu {
 
@@ -126,10 +172,10 @@ $color-hamburguer: #000;
         li+li{
             margin-left: 0;
         }
-        a.link {
+        .link {
             padding: 1rem 0;
             margin: 0 1rem;
-            border-bottom: 2px solid rgba(0, 0, 0, .05);
+            border-bottom: 2px solid $border-bottom-color;
         }
     }
 

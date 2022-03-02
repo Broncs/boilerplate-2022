@@ -5,8 +5,11 @@ export default function menu() {
     function toggleMenu(event) {
        if(event.type === 'touchstart') event.preventDefault();
        const nav = document.getElementById('nav');
+       const header = document.getElementById('header');
+
        
        nav.classList.toggle('active');
+       header.classList.toggle('bg-on-menu-open');
        const active = nav.classList.contains('active');
        event.currentTarget.setAttribute('aria-expanded', active);
    
@@ -24,6 +27,6 @@ export default function menu() {
 
 
    window.addEventListener("scroll", function () {
-    headerEl.classList.toggle("sticky", window.scrollY > 150);
+    headerEl.classList.toggle("sticky", window.scrollY > 0);
   });
 }
